@@ -38,6 +38,7 @@ oc scale deploy myapp --replicas=3
 oc rollout status deploy/myapp
 oc rollout history deploy/myapp
 oc set image deploy/myapp  httpd-24=registry.redhat.io/rhel9/httpd-24
+oc rollout undo deploy/myapp --to-revision=2
 oc rollout status deploy/myapp
 oc rollout history deploy/myapp
 oc describe deployment myapp|grep -i revision
