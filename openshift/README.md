@@ -10,8 +10,8 @@ oc run newpod --image=registry.redhat.io/rhel8/httpd-24
 oc run newpod --image=registry.redhat.io/rhel8/httpd-24 --dry-run=client -o yaml
 oc run newpod1 --image=registry.redhat.io/rhel8/httpd-24 --restart=Never
 oc run newpod2 --image=registry.access.redhat.com/ubi9/ubi --restart=Never --command -- sleep 3600
-oc run newpod2 --image=registry.access.redhat.com/ubi9/ubi --rm --restart=Never --command -- sleep 3600
-oc run newpod2 --image=registry.access.redhat.com/ubi9/ubi --rm --restart=Never --command -- sleep 3600 --env MYSQL_ROOT_PASSWORD=myP@$$123
+oc run newpod2 --image=registry.access.redhat.com/ubi9/ubi --restart=Never --command -- sleep 3600
+oc run newpod2 --image=registry.access.redhat.com/ubi9/ubi --restart=Never --command -- sleep 3600 --env MYSQL_ROOT_PASSWORD=myP@$$123
 oc rsh newpod2
 oc cp /tmp/index.html pod-name:/var/www/html/
 oc rsync pod-name:/var/www/ /tmp/web_files
