@@ -42,3 +42,9 @@ oc rollout undo deploy/myapp --to-revision=2
 oc rollout status deploy/myapp
 oc rollout history deploy/myapp
 oc describe deployment myapp|grep -i revision
+```
+Service commands
+
+oc create service nodeport demo-nodeport --tcp=9999:8080
+oc edit service nodeport
+oc get endpoints demo-nodeport
